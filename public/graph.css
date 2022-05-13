@@ -1,0 +1,36 @@
+#graph {
+	font-size: 1.6rem;
+	max-height: 85vh;
+}
+
+.marker {
+	fill: var(--bg-alt);
+	stroke: var(--bg-alt);
+}
+
+.node rect {
+	fill: none;
+	stroke: var(--fg-primary);
+	stroke-width: 1px;
+}
+
+.client rect {
+	fill: var(--client);
+}
+
+.shop rect {
+	fill: var(--shop);
+}
+
+.flowchart-link {
+	stroke: var(--bg-alt);
+	stroke-width: 2px;
+}
+
+.edgeLabel {
+	padding: .5rem;
+	background-color: var(--bg-secondary);
+	color: var(--fg-primary);
+	border-radius: 50%;
+	display: inline-block;
+}
