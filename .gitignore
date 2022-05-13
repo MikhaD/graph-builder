@@ -1,6 +1,0 @@
-node_modules/
-public/build/
-
-package-lock.json
-test.html
-setVersion.mjs
