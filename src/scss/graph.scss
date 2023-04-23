@@ -1,6 +1,12 @@
 #graph {
 	font-size: 1.6rem;
-	max-height: 85vh;
+	max-height: 100%;
+	max-height: 75vh;
+
+	rect {
+		rx: .8rem;
+		ry: .8rem;
+	}
 }
 
 .marker {

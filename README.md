@@ -1,8 +1,10 @@
 # To Do
-- [ ] Add download button
 - [ ] Add error messages
 - [ ] Add zoom and pan capability
-- [ ] Add light dark toggle
-- [ ] Add code to produce the assignment results. Create tabs at the top of the right window for graph and output
 - [ ] Add toggle for live reload, but disable it if the graph is too big
 - [ ] Clear input button
+
+- [ ] Add validation to NumberInput
+- [ ] Add data generation
+- [ ] Add upload and download capability
+- [ ] Add drag and drop anywhere to upload functionality

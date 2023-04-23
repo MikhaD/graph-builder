@@ -1,0 +1,1 @@
+type Orientation = "LR" | "TB" | "RL" | "BT";
