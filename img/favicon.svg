@@ -1,0 +1,21 @@
+<svg viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<style>
+		path {
+			stroke: black
+		}
+
+		circle {
+			fill: #538D4E
+		}
+
+		@media (prefers-color-scheme: dark) {
+			path {
+				stroke: white
+			}
+		}
+	</style>
+	<path d="M216 216L40 168L176 40L216 216Z" stroke-width="20" />
+	<circle cx="40" cy="168" r="40" />
+	<circle cx="216" cy="216" r="40" />
+	<circle cx="176" cy="40" r="40" />
+</svg>
