@@ -25,4 +25,9 @@
 		flex-grow: 1;
 		border: none;
 	}
+	@media (max-width: 700px) {
+		#input {
+			min-height: 20rem;
+		}
+	}
 </style>

@@ -1,16 +1,19 @@
 <script lang="ts">
 	import Graph2022 from "./Graph2022.svelte";
 	import Graph2023 from "./Graph2023.svelte";
-	let selected: string = "2022";
+	let selected = document.location.hash.slice(1) || "2023";
 	const tabs = {
 		"2022": Graph2022,
 		"2023": Graph2023,
 	};
+
 	function onSelect(e: MouseEvent & { currentTarget: HTMLDivElement & EventTarget }) {
 		if (e.currentTarget.dataset.name) {
 			selected = e.currentTarget.dataset.name;
 		}
 	}
+
+	$: document.location.hash = selected;
 </script>
 
 <div class="container">
@@ -50,6 +53,7 @@
 		flex: 1;
 		background-color: var(--bg-secondary);
 		border-bottom: var(--border);
+		border-radius: var(--br) var(--br) 0 0;
 	}
 	.tab.selected {
 		font-size: 3rem;

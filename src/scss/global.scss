@@ -16,7 +16,7 @@
 
 	--green: #538D4E;
 	--red: #8E2121;
-	--br: 1rem;
+	--br: .5rem;
 
 	--shop: var(--bg-primary);
 	--client: var(--bg-alt);
@@ -80,6 +80,32 @@ body {
 	gap: 1rem;
 	width: 30vw;
 	min-width: 30rem;
+}
+
+.button {
+	flex: 1;
+	font: inherit;
+	border: none;
+	color: inherit;
+	font-weight: bold;
+	border-radius: var(--br);
+	padding: 1rem;
+	height: 5rem;
+	display: flex;
+	gap: 1rem;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--bg-alt);
+	cursor: pointer;
+	text-decoration: none;
+
+	&:hover {
+		scale: 1.01;
+	}
+
+	&:active {
+		scale: 0.99;
+	}
 }
 
 @media (max-width: 700px) {

@@ -3,16 +3,16 @@
 	import { onDestroy } from "svelte";
 	import Direction from "./lib/Direction.svelte";
 	import Color from "./lib/Color.svelte";
-	import { renderSVG } from "./utils";
 	import Graph from "./lib/Graph.svelte";
 
 	let input =
-		localStorage.getItem("gb-2023") ??
+		localStorage.getItem("gb-2022-value") ||
 		"5\n0 4 15\n1 0 14 2 7 3 23\n2 0 7\n3 1 23 4 16\n4 2 15 3 9\n2\n0 3\n3\n1 4 2";
 	let graphInput = "";
 	let valid = true;
 	let rendered = false;
-	let orientation: Orientation = "LR";
+	let orientation: Orientation =
+		(localStorage.getItem("gb-2022-orientation") as Orientation) ?? "LR";
 	let clientColor = "#606060";
 	let shopColor = "#000000";
 	let shops: string[];
@@ -109,7 +109,8 @@
 	}
 
 	onDestroy(() => {
-		localStorage.setItem("gb-2023", input);
+		localStorage.setItem("gb-2022-value", input);
+		localStorage.setItem("gb-2022-orientation", orientation);
 	});
 </script>
 

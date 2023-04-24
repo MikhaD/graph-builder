@@ -13,3 +13,12 @@ export function renderSVG(graph: string, preprocessor: (e: SVGSVGElement) => SVG
 	svg.querySelector("style")?.remove();
 	return preprocessor(svg);
 }
+
+/**
+ * Generate a random integer between two numbers
+ * @param min The minimum value to return (inclusive)
+ * @param max The maximum value (exclusive)
+ */
+export function randint(min: number, max: number): number {
+	return Math.floor(Math.random() * (max - min)) + min;
+}
