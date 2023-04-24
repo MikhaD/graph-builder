@@ -4,28 +4,26 @@
 	max-height: 75vh;
 
 	rect {
+		fill: none;
+		stroke: var(--fg-primary);
+		stroke-width: 1px;
+		fill: var(--bg-alt);
 		rx: .8rem;
 		ry: .8rem;
+	}
+
+	.client rect {
+		fill: var(--client);
+	}
+
+	.shop rect {
+		fill: var(--shop);
 	}
 }
 
 .marker {
 	fill: var(--bg-alt);
 	stroke: var(--bg-alt);
-}
-
-.node rect {
-	fill: none;
-	stroke: var(--fg-primary);
-	stroke-width: 1px;
-}
-
-.client rect {
-	fill: var(--client);
-}
-
-.shop rect {
-	fill: var(--shop);
 }
 
 .flowchart-link {

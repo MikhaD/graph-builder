@@ -108,6 +108,11 @@
 		return true;
 	}
 
+	function render() {
+		graphInput = input;
+		rendered = true;
+	}
+
 	onDestroy(() => {
 		localStorage.setItem("gb-2022-value", input);
 		localStorage.setItem("gb-2022-orientation", orientation);
@@ -116,15 +121,7 @@
 
 <section>
 	<div class="input-container">
-		<Input {validate} bind:valid bind:value={input} />
-		<button
-			class:valid
-			on:click={() => {
-				graphInput = input;
-				rendered = true;
-			}}
-			class="render">Render</button
-		>
+		<Input {validate} bind:valid bind:value={input} on:render={render} />
 	</div>
 	<div class="graph-container" style:--client={clientColor} style:--shop={shopColor}>
 		<div class="controls tile">

@@ -32,7 +32,6 @@
 			const source = nodeNames.splice(randint(0, nodeNames.length), 1)[0];
 
 			const targets = letterMap.get(source);
-			console.log(targets);
 			const destination = targets.splice(randint(0, targets.length), 1)[0];
 			if (targets.length === 0) {
 				letterMap.delete(source);

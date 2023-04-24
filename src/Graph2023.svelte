@@ -3,16 +3,15 @@
 	import Direction from "./lib/Direction.svelte";
 	import Graph from "./lib/Graph.svelte";
 	import Input from "./lib/Input.svelte";
-	import NumberInput from "./lib/NumberInput.svelte";
 	import Generate from "./lib/Generate.svelte";
 
-	let valid = true;
 	let input =
 		localStorage.getItem("gb-2023-value") ||
 		"A B 4\nA D 1\nA E 5\nB G 1\nD B 2\nD E 3\nD F 8\nE F 4\nG F 2";
 	let graphInput = "";
 	let rendered = false;
 	let dragOver = false;
+	let autoRender = Boolean(+localStorage.getItem("gb-2023-autoRender")) ?? true;
 	let orientation: Orientation =
 		(localStorage.getItem("gb-2023-orientation") as Orientation) ?? "LR";
 
@@ -76,9 +75,15 @@
 		input = e.detail;
 	}
 
+	function onRender() {
+		graphInput = input;
+		rendered = true;
+	}
+
 	onDestroy(() => {
 		localStorage.setItem("gb-2023-value", input);
 		localStorage.setItem("gb-2023-orientation", orientation);
+		localStorage.setItem("gb-2023-autoRender", (+autoRender).toString());
 	});
 </script>
 
@@ -113,22 +118,14 @@
 				Download
 			</a>
 		</div>
-		<Input {validate} bind:valid bind:value={input} />
-		<button
-			class:valid
-			class="render"
-			on:click={() => {
-				graphInput = input;
-				rendered = true;
-			}}>Render</button
-		>
+		<Input {validate} bind:value={input} on:render={onRender} bind:autoRender />
 	</aside>
 	<div class="graph-container">
 		<div class="orientation tile">
 			<Direction bind:orientation />
 		</div>
 		{#key rendered && orientation}
-			<Graph update={valid && rendered} data={graphInput} {preprocess} />
+			<Graph update={rendered} data={graphInput} {preprocess} />
 		{/key}
 	</div>
 </section>
