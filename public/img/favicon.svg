@@ -1,21 +1,28 @@
-<svg viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" stroke-width="8">
 	<style>
-		path {
-			stroke: black
+		svg {
+			stroke: black;
+			fill: none
 		}
 
 		circle {
-			fill: #538D4E
+			fill: white;
 		}
 
 		@media (prefers-color-scheme: dark) {
-			path {
+			svg {
 				stroke: white
+			}
+
+			circle {
+				fill: black;
 			}
 		}
 	</style>
-	<path d="M216 216L40 168L176 40L216 216Z" stroke-width="20" />
-	<circle cx="40" cy="168" r="40" />
-	<circle cx="216" cy="216" r="40" />
-	<circle cx="176" cy="40" r="40" />
+	<path d="M35 25L50 50L75 35M25 75L50 50L80 70"></path>
+	<circle cx="35" cy="25" r="8"></circle>
+	<circle cx="75" cy="35" r="8"></circle>
+	<circle cx="50" cy="50" r="8"></circle>
+	<circle cx="25" cy="75" r="8"></circle>
+	<circle cx="80" cy="70" r="8"></circle>
 </svg>
